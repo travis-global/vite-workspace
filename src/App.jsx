@@ -106,8 +106,8 @@ export default function App() {
                 e.g.: <Route path="accounting/expenses" element={<Expenses />} /> */}
           </Route>
         </Routes>
+	    </AuthProvider>  
 	   </NotificationProvider>
-      </AuthProvider>
     </BrowserRouter>
   );
 }
