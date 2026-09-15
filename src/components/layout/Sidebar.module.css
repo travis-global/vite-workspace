@@ -1,0 +1,112 @@
+.sidebar {
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: var(--sidebar-width);
+  transition: width 0.2s ease;
+  flex-shrink: 0;
+}
+.sidebar.collapsed {
+  width: var(--sidebar-width-collapsed);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 8px;
+  white-space: nowrap;
+}
+.collapsed .header {
+  justify-content: center;
+  padding: 0 0 20px;
+}
+
+.logoMark {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--green);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #012762;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.brandName {
+  color: #fff;
+  font-size: 15px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+}
+
+.sectionLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(232, 237, 246, 0.45);
+  padding: 18px 20px 6px;
+  white-space: nowrap;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  color: rgba(232, 237, 246, 0.85);
+  font-size: 14px;
+  font-weight: 500;
+  border-left: 3px solid transparent;
+  white-space: nowrap;
+}
+.navItem:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+.navItem.active {
+  background: rgba(8, 180, 83, 0.14);
+  border-left-color: var(--green);
+  color: #fff;
+}
+.collapsed .navItem {
+  justify-content: center;
+  padding: 10px;
+}
+
+.icon {
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+  font-size: 15px;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 12px 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.collapseBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  color: rgba(232, 237, 246, 0.6);
+  font-size: 13px;
+  padding: 8px 0;
+  width: 100%;
+}
+.collapsed .collapseBtn {
+  justify-content: center;
+}

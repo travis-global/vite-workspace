@@ -1,0 +1,54 @@
+:root,
+[data-theme="light"] {
+  --navy: #012762;
+  --navy-soft: #0A3A80;
+  --green: #08B453;
+  --green-soft: #E7F8EE;
+
+  --bg: #F7F9FC;
+  --surface: #FFFFFF;
+
+  --text: #0F1B2E;
+  --muted: #64748B;
+
+  --border: #E2E8F0;
+  --radius: 10px;
+  --radius-sm: 6px;
+
+  --danger: #C13B3B;
+  --danger-soft: #FBEAEA;
+  --warning: #D97706;
+  --warning-soft: #FEF3E2;
+
+  /* Chrome that should stay deep navy even in dark mode */
+  --sidebar-bg: #012762;
+  --sidebar-text: #E8EDF6;
+
+  --sidebar-width: 240px;
+  --sidebar-width-collapsed: 68px;
+  --topbar-height: 64px;
+}
+
+[data-theme="dark"] {
+  --navy: #7EB6FF;       /* accent on dark surfaces (links, headings) */
+  --navy-soft: #1A3A66;
+  --green: #2DD47A;
+  --green-soft: #0F2E1C;
+
+  --bg: #0B1220;
+  --surface: #121A2B;
+
+  --text: #E8EEF7;
+  --muted: #94A3B8;
+
+  --border: #243044;
+
+  --danger: #F07178;
+  --danger-soft: #3A1A1C;
+  --warning: #FBBF24;
+  --warning-soft: #3A2A0A;
+
+  /* Same deep navy chrome */
+  --sidebar-bg: #0A1628;
+  --sidebar-text: #E8EDF6;
+}

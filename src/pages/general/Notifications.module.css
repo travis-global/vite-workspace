@@ -1,0 +1,118 @@
+/* src/pages/general/Notifications.module.css */
+
+.page {
+  max-width: 720px;
+}
+
+.header {
+  margin-bottom: 1rem;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  color: var(--navy);
+}
+
+.subtitle {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.error {
+  background: var(--danger-soft);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.secondaryBtn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--navy);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.9rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5rem 0;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 1rem 1.25rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item,
+.itemUnread {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.itemUnread {
+  background: var(--green-soft);
+}
+
+.itemHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.time {
+  font-size: 0.75rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.body {
+  margin: 0 0 0.35rem;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+}
+
+.meta {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.linkBtn {
+  background: transparent;
+  border: none;
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  padding: 0;
+}

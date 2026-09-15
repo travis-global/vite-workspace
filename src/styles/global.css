@@ -1,0 +1,51 @@
+/* src/styles/global.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import './tokens.css';
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Public Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: 'Public Sans', sans-serif;
+  cursor: pointer;
+}
+
+/* The signature numeric treatment — every monetary figure across the
+   app uses this class. Tabular figures keep columns of numbers
+   aligned in tables/reports, which matters a lot for a bookkeeping-
+   adjacent tool. */
+.money {
+  font-family: 'IBM Plex Mono', monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+.money .symbol {
+  color: var(--muted);
+  font-weight: 400;
+  margin-right: 2px;
+}
