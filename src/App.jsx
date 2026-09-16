@@ -53,8 +53,8 @@ import AiUsage from './pages/technical/AiUsage';
 export default function App() {
   return (
     <BrowserRouter>
+	<AuthProvider>
      <NotificationProvider>
-      <AuthProvider>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/change-password" element={<ChangePassword />} />
@@ -107,8 +107,8 @@ export default function App() {
                 e.g.: <Route path="accounting/expenses" element={<Expenses />} /> */}
           </Route>
         </Routes>
-	    </AuthProvider>  
 	   </NotificationProvider>
+	   </AuthProvider>
     </BrowserRouter>
   );
 }
