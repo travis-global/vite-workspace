@@ -1,10 +1,18 @@
 // src/api/chatSocket.js
 // Backend: features/general_chat_system → /chat/ws?token=
+//
+// Use VITE_WS_BASE_URL (e.g. wss://ws.receipta.com.ng), not Vercel /backend.
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
-function toWsBase(httpBase) {
-  return httpBase.replace(/^http/, 'ws').replace(/\/$/, '');
+function getWsBase() {
+  const explicit = import.meta.env.VITE_WS_BASE_URL;
+  if (explicit && String(explicit).trim()) {
+    return String(explicit).trim().replace(/\/$/, '');
+  }
+  return API_BASE.replace(/\/backend\/?$/, '')
+    .replace(/^http/, 'ws')
+    .replace(/\/$/, '');
 }
 
 /**
@@ -23,9 +31,10 @@ export function connectChatSocket(onEvent) {
 
   const connect = () => {
     const url =
-  getWsBase() +
-  '/chat/ws?token=' +
-  encodeURIComponent(token);
+      getWsBase() +
+      '/chat/ws?token=' +
+      encodeURIComponent(token);
+
     ws = new WebSocket(url);
 
     ws.onopen = () => {
