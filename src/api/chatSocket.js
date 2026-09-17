@@ -23,10 +23,9 @@ export function connectChatSocket(onEvent) {
 
   const connect = () => {
     const url =
-      toWsBase(API_BASE) +
-      '/chat/ws?token=' +
-      encodeURIComponent(token);
-
+  getWsBase() +
+  '/chat/ws?token=' +
+  encodeURIComponent(token);
     ws = new WebSocket(url);
 
     ws.onopen = () => {
