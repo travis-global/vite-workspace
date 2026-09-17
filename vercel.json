@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/backend/:path*",
-      "destination": "http://34.59.189.231:8000/:path*"
+      "destination": "/api/backend/:path*"
     },
     {
       "source": "/((?!backend/).*)",
