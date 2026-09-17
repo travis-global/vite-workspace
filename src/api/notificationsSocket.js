@@ -3,11 +3,15 @@
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
-function toWsBase(httpBase) {
-  // http://host → ws://host   |  https://host → wss://host
-  return httpBase.replace(/^http/, 'ws').replace(/\/$/, '');
+function getWsBase() {
+  const explicit = import.meta.env.VITE_WS_BASE_URL;
+  if (explicit && String(explicit).trim()) {
+    return String(explicit).trim().replace(/\/$/, '');
+  }
+  return API_BASE.replace(/\/backend\/?$/, '')
+    .replace(/^http/, 'ws')
+    .replace(/\/$/, '');
 }
-
 /**
  * Open a notifications WebSocket for the current user.
  * onEvent(data) receives parsed JSON: { event, notification? } | { event, count? }
@@ -24,10 +28,10 @@ export function connectNotificationsSocket(onEvent) {
 
   const connect = () => {
     const url =
-      toWsBase(API_BASE) +
-      '/notifications/ws?token=' +
-      encodeURIComponent(token);
-
+  getWsBase() +
+  '/notifications/ws?token=' +
+  encodeURIComponent(token);
+    
     ws = new WebSocket(url);
 
     ws.onopen = () => {
